@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get } from "firebase/database"
+import { getDatabase, ref, get, onValue } from "firebase/database";
 
 
 const firebaseConfig = { 
@@ -26,20 +26,17 @@ class App extends Component {
     super(props)
 
     this.state = {
-      data: 10
+      data: []
     }
   }
 
   componentDidMount() {
-    get(ref(db, 'room-1'))
-      .then(snapshot => {
-        let data = snapshot.val();
-        this.setState({data: data})
-        //console.log('data :', data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    const db = getDatabase();
+    const starCountRef = ref(db, 'room-1');
+    onValue(starCountRef, (snapshot) => {
+      let data = snapshot.val();
+      this.setState({data: data})
+    });
   }
   
   render() {
