@@ -1,7 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, onValue } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 
 const firebaseConfig = { 
@@ -43,11 +46,40 @@ class App extends Component {
     const {data} = this.state
     console.log(data)
     return (
-      <div className="App">
-        <h1>the value temperature is: {data.temperature} *C</h1>
-        <h1>the value humidity is: {data.humidity} %</h1>
-        <h1>the value heartbeat is: {data.heartbeat} bpm</h1>
-        <h1>the value blood oxygen is: {data.SpO2} %</h1>
+      <div className="MainDiv">
+        <div class="jumbotron text-center bg-sky">
+          <h3>Smart Healthcare Monitoring System</h3>
+        </div>
+
+        <div className="container">
+          <table id="example" class="display table">
+            <thead class="thead-dark">
+                <tr>
+                  <th>Patient Room</th>
+                  <th>Room Temperature</th>
+                  <th>Humidity</th>
+                  <th>Heartbeat</th>
+                  <th>Blood Oxygen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>{data.room_name}</td>     
+                  <td>{data.temperature} *C</td>
+                  <td>{data.humidity} %</td>
+                  <td>{data.heartbeat} bpm</td>
+                  <td>{data.SpO2} %</td>
+                </tr>    
+            </tbody>
+         </table>
+        </div>
+
+        <div className="App">
+          <h1>the value temperature is: {data.temperature} *C</h1>
+          <h1>the value humidity is: {data.humidity} %</h1>
+          <h1>the value heartbeat is: {data.heartbeat} bpm</h1>
+          <h1>the value blood oxygen is: {data.SpO2} %</h1>
+        </div>
       </div>
     )
   }
