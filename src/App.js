@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faDroplet,faHeartPulse,faTemperatureQuarter,faThermometer} from '@fortawesome/free-solid-svg-icons';
 
 
 const firebaseConfig = { 
@@ -19,9 +21,7 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
-
 const db = getDatabase(app)
-
 export { db }
 
 class App extends Component {
@@ -60,25 +60,54 @@ class App extends Component {
                   <th>Humidity</th>
                   <th>Heartbeat</th>
                   <th>Blood Oxygen</th>
+                  <th>Body Temperature</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                   <td>{data.room_name}</td>     
-                  <td>{data.temperature} *C</td>
+                  <td>{data.temperature} °C</td>
                   <td>{data.humidity} %</td>
                   <td>{data.heartbeat} bpm</td>
                   <td>{data.SpO2} %</td>
+                  <td>{data.bodytemperature} °C</td>
                 </tr>    
             </tbody>
          </table>
         </div>
 
         <div className="App">
-          <h1>the value temperature is: {data.temperature} *C</h1>
-          <h1>the value humidity is: {data.humidity} %</h1>
-          <h1>the value heartbeat is: {data.heartbeat} bpm</h1>
-          <h1>the value blood oxygen is: {data.SpO2} %</h1>
+
+          <div className="flex">
+          <FontAwesomeIcon icon={faTemperatureQuarter} size='3x' color="#40b862" />
+          <h1 className="space">Room Temperature</h1>
+          <span className="value colour-temperature">{data.temperature} %</span>
+          </div>
+
+          <div className="flex">
+          <FontAwesomeIcon icon={faDroplet} size='3x' color="#ffffff" />
+          <h1 className="space">Humidity</h1>
+          <span className="value temperature">{data.humidity} %</span>
+          </div>
+
+          <div className="flex">
+          <FontAwesomeIcon icon={faHeartPulse} size='3x' color="#e04abb" />
+          <h1 className="space">Heartbeat</h1>
+          <span className="value colour-heartbeat">{data.heartbeat} BPM</span>
+          </div>
+
+          <div className="flex">
+          <FontAwesomeIcon icon={faDroplet} size='3x' color="#e04a4a" />
+          <h1 className="space">Blood Oxygen</h1>
+          <span className="value colour-blood-oxygen">{data.bodytemperature} %</span>
+          </div>
+          
+          <div className="flex">
+          <FontAwesomeIcon icon={faThermometer} size='3x' color="#FFA500" />
+          <h1 className="space">Body Temperature</h1>
+          <span className="value colour-body-temperature">{data.bodytemperature} °C</span>
+          </div>
+          
         </div>
       </div>
     )

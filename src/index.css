@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flex {
+  display:flex;
+  align-items: center;
+}
+
+.space {
+  margin-left: 20px;
+}
+
+.value {
+  font-size: 70px;
+  margin-left: 20px;
+}
+
+.colour-temperature {
+  color: #40b862;
+}
+
+.colour-humidity {
+  color: #FFFFFF;
+}
+
+.colour-heartbeat {
+  color: #e04abb;
+}
+
+.colour-blood-oxygen {
+  color: #e04a4a;
+}
+
+.colour-body-temperature {
+  color: #FFA500;
+}
+
+
+
