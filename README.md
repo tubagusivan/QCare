@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Published at [https://tubagusivan.github.io/QCare-esp32-firebase](https://tubagusivan.github.io/QCare-esp32-firebase)
+
 ## Available Scripts
 
 In the project directory, you can run:
