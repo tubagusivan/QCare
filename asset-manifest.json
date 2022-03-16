@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QCare-esp32-firebase/static/css/main.3656082c.css",
+    "main.js": "/QCare-esp32-firebase/static/js/main.94235f10.js",
+    "static/js/787.3d507f90.chunk.js": "/QCare-esp32-firebase/static/js/787.3d507f90.chunk.js",
+    "index.html": "/QCare-esp32-firebase/index.html",
+    "main.3656082c.css.map": "/QCare-esp32-firebase/static/css/main.3656082c.css.map",
+    "main.94235f10.js.map": "/QCare-esp32-firebase/static/js/main.94235f10.js.map",
+    "787.3d507f90.chunk.js.map": "/QCare-esp32-firebase/static/js/787.3d507f90.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3656082c.css",
+    "static/js/main.94235f10.js"
+  ]
+}
